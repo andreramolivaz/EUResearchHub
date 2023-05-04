@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% block content %}
+
+    <div class='message-box'>
+        <h2>Stanza {{room}} <h2>
+        <div class='messages' id='messages'></div>
+        <div class='input>'>
+            <input type='text' rows='3' placeholder='messaggio' name='message' id='message' />
+            <button name='send' id='send-btn' onClick='sendMessage()'>Invia</button>
+        </div>
+    </div>
+    <script 
+        src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+        crossorigin="anonymous"
+    ></script>
+    <script src='{{url_for("static", filename="js/room.js")}}'></script>
+{% endblock %}
