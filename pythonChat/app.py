@@ -66,7 +66,7 @@ def room():
         return redirect(url_for('home'),)
 
 
-    return render_template('room.html', code = room)
+    return render_template('room.html', code = room, messages = rooms[room]['messages'])
 
 @socketio.on('connect')
 def connect(auth):
