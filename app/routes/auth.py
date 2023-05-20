@@ -11,10 +11,10 @@ import os
 
 auth = Blueprint('auth', __name__)
 
+
 # login route
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
-
     if request.method == 'POST':
         email = request.form.get('email') # email from the form
         password = request.form.get('password') # password from the form
@@ -28,12 +28,12 @@ def login():
             login_user(evaluator)
             db.session.close()
             current_app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('EVALUATOR_DATABASE_URI')
-            return redirect(url_for('views.projects'))
+            return redirect(url_for('views.projects', user_type='evaluator'))
         elif researcher and check_password_hash(researcher.password, password):
             login_user(researcher)
             db.session.close()
             current_app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('RESEARCHER_DATABASE_URI')
-            return redirect(url_for('projects'))
+            return redirect(url_for('views.projects', user_type='researcher'))
         else:
             flash('Invalid email or password', 'error')
     return render_template('login.html')
@@ -84,9 +84,13 @@ def register():
                 filename = 'default.jpg'
 
             if affiliation is None:
-                new_user = Evaluators(name=name, surname=surname, email=email, password=generate_password_hash(password, method='sha256'), profile_picture=filename)
+                new_user = Evaluators(name=name, surname=surname, email=email,
+                                      password=generate_password_hash(password, method='sha256'), profile_picture=filename)
             else:
-                new_user = Researchers(name=name, surname=surname, email=email, password=generate_password_hash(password, method='sha256'), affiliation=affiliation, profile_picture=filename)
+                new_user = Researchers(name=name, surname=surname, email=email,
+                                       password=generate_password_hash(password, method='sha256'),
+                                       affiliation=affiliation, profile_picture=filename)
+
             db.session.add(new_user)
             db.session.commit()
 
@@ -97,6 +101,7 @@ def register():
         else:
             return render_template('register.html', user='researcher')
     return render_template('register.html', user='none')
+
 
 # logout route
 @auth.route('/logout')
