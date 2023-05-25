@@ -1010,8 +1010,14 @@ form.hide-submit input[type="submit"] {
 }
 
 .new-project-box-wrapper {
+<<<<<<< Updated upstream
    width: 33.3%;
     padding: 16px;
+=======
+    height: 237.5px;
+    width:509px;
+    padding: 8px;
+>>>>>>> Stashed changes
     transition: 0.2s;
     box-sizing: border-box;
         height: 250px; /* Adjust the height as needed */
