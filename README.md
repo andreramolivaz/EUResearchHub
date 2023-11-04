@@ -7,7 +7,7 @@
 
 ## Description
 
-This project aims to design and implement a web application for the internal evaluation of research projects to be submitted for funding to the European Union. The web application provides a platform for researchers to create new projects for evaluation, each consisting of a textual description and one or more PDF documents for assessment, potentially of different types such as data management plans, ethics deliverables, etc. 
+This project aims to design and implement a full stack web application for the internal evaluation of research projects to be submitted for funding to the European Union. The web application provides a platform for researchers to create new projects for evaluation, each consisting of a textual description and one or more PDF documents for assessment, potentially of different types such as data management plans, ethics deliverables, etc. 
 
 Each project has a specific state, including:
 - `Approved`: Evaluators have expressed a favorable opinion, and no further modifications are possible.
@@ -34,6 +34,25 @@ The project also includes a messaging component through which researchers and ev
 - Researchers and evaluators can interact through a messaging system.
 - Evaluators can insert comments within the PDFs for evaluation.
 - Evaluation reports can reference specific comments within the documents.
+
+  
+Here a generic overview of the final app:
+<div align="center">
+ <table>
+   <tr>
+    <td><img width="1438" alt="13" src="https://github.com/andreramolivaz/EUResearchHub/assets/92636448/89938cd9-baca-494a-a719-8f0a3f028724" /><br><em>Register</em></td> 
+    <td><img width="1438" alt="11" src="https://github.com/andreramolivaz/EUResearchHub/assets/92636448/570d29d0-e491-450a-a1e6-4dd1e416d8fa" /><br><em>Login</em></td> 
+    <td><img width="1438" alt="10" src="https://github.com/andreramolivaz/EUResearchHub/assets/92636448/0b4ef071-727f-47a1-ba69-6769814b17d6"  /><br><em>Projects Dashboard</em></td> 
+    </tr> <tr>
+    <td><img width="1438" alt="12" src="https://github.com/andreramolivaz/EUResearchHub/assets/92636448/6d1bcca1-8979-4635-9733-b4963bab0909"  /><br><em>Project's Documents with versioning and Team Chat</em></td> 
+    <td><img width="1438" alt="14" src="https://github.com/andreramolivaz/EUResearchHub/assets/92636448/90bd45d9-aeb7-463f-bc48-1d12e4214951" /><br><em>Upload new document (the pdf preview is now available)</em></td> 
+    <td><img width="1438" alt="15" src="https://github.com/andreramolivaz/EUResearchHub/assets/92636448/48dd0f56-d295-4f3f-ae19-a91385b67bae" /><br><em>Creation of a new project</em></td> 
+   </tr>
+  </table>
+
+</div>
+
+
 
 ## Demo Video
 
